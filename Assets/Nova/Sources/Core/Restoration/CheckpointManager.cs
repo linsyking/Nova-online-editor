@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,6 +32,8 @@ namespace Nova
         /// The global data of the game. For example, the global variables and the unlock status of images and musics.
         /// It is the game author's job to make sure all values are serializable.
         public readonly Dictionary<string, object> data = new Dictionary<string, object>();
+
+        public readonly Dictionary<string, DateTime> saves = new Dictionary<string, DateTime>();
     }
 
     #region Bookmark classes
@@ -171,11 +173,10 @@ namespace Nova
                 return;
             }
 
-            savePathBase = Path.Combine(Application.persistentDataPath, "Save", saveFolder);
+            savePathBase = "Save";
             globalSavePath = Path.Combine(savePathBase, "global.nsav");
-            Directory.CreateDirectory(savePathBase);
 
-            if (File.Exists(globalSavePath))
+            if (PlayerPrefs.HasKey(globalSavePath))
             {
                 try
                 {
@@ -197,15 +198,17 @@ namespace Nova
                 ResetGlobalSave();
             }
 
-            foreach (string fileName in Directory.GetFiles(savePathBase, "sav*.nsav*"))
+            foreach (KeyValuePair<string, DateTime> pair in globalSave.saves)
             {
-                var result = Regex.Match(fileName, @"sav([0-9]+)\.nsav");
+                var path = pair.Key;
+                var date = pair.Value;
+                var result = Regex.Match(path, @"sav([0-9]+)\.nsav");
                 if (result.Groups.Count > 1 && int.TryParse(result.Groups[1].Value, out int id))
                 {
                     saveSlotsMetadata.Add(id, new BookmarkMetadata
                     {
                         saveID = id,
-                        modifiedTime = File.GetLastWriteTime(fileName)
+                        modifiedTime = date
                     });
                 }
             }
@@ -393,12 +396,20 @@ namespace Nova
         /// </summary>
         public void ResetGlobalSave()
         {
-            var saveDir = new DirectoryInfo(savePathBase);
-            foreach (var file in saveDir.GetFiles())
-                file.Delete();
-
             globalSave = new GlobalSave();
             serializer.SafeWrite(globalSave, globalSavePath);
+        }
+
+        public void AddSaveToGlobalSave(int saveID)
+        {
+            var path = GetBookmarkFileName(saveID);
+            globalSave.saves[path] = DateTime.Now;
+        }
+
+        public void DeleteSaveToGlobalSave(int saveID)
+        {
+            var path = GetBookmarkFileName(saveID);
+            globalSave.saves.Remove(path);
         }
 
         #endregion
@@ -451,6 +462,8 @@ namespace Nova
             bookmark.globalSaveIdentifier = globalSave.identifier;
 
             serializer.SafeWrite(ReplaceCache(saveID, bookmark), GetBookmarkFileName(saveID));
+            AddSaveToGlobalSave(saveID);
+
             UpdateGlobalSave();
 
             var metadata = saveSlotsMetadata.Ensure(saveID);
@@ -482,7 +495,8 @@ namespace Nova
         /// <param name="saveID">ID of the bookmark.</param>
         public void DeleteBookmark(int saveID)
         {
-            File.Delete(GetBookmarkFileName(saveID));
+            PlayerPrefs.DeleteKey(GetBookmarkFileName(saveID));
+            DeleteSaveToGlobalSave(saveID);
             saveSlotsMetadata.Remove(saveID);
             ReplaceCache(saveID, null);
         }

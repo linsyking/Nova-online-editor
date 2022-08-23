@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,22 +44,40 @@ namespace Nova
         {
             foreach (var entry in tmpStrCache)
             {
+#if true
                 PlayerPrefs.SetString(entry.Key, entry.Value);
+#else
+                WXDataManager.setString(entry.Key, entry.Value);
+#endif
             }
 
             foreach (var entry in tmpFloatCache)
             {
+#if true
                 PlayerPrefs.SetString(entry.Key, $"{entry.Value:0.###}");
+#else
+                WXDataManager.setString(entry.Key, $"{entry.Value:0.###}");
+                
+#endif
             }
 
             foreach (var entry in tmpIntCache)
             {
+#if true
                 PlayerPrefs.SetString(entry.Key, $"{entry.Value}");
+#else
+                WXDataManager.setString(entry.Key, $"{entry.Value}");
+#endif
+
+
             }
 
             ClearCache();
-
+#if true
             PlayerPrefs.Save();
+#else
+
+#endif
         }
 
         private void ClearCache()
@@ -78,7 +96,12 @@ namespace Nova
         public void ResetDefault()
         {
             ClearCache();
+#if true
             PlayerPrefs.DeleteAll();
+#else
+            WXDataManager.delAllKey();
+#endif
+
             NotifyAll();
         }
 
@@ -95,11 +118,11 @@ namespace Nova
             {
                 return value;
             }
-
             if (PlayerPrefs.HasKey(key))
             {
                 return PlayerPrefs.GetString(key, defaultValue);
             }
+
 
             if (definitions.TryGetValue(key, out var def))
             {
@@ -154,7 +177,7 @@ namespace Nova
         {
             if (key.StartsWith(TrackedKeyPrefix, StringComparison.Ordinal))
             {
-                var trackedKeys = new SortedSet<string>(GetAllTrackedKeys()) {key};
+                var trackedKeys = new SortedSet<string>(GetAllTrackedKeys()) { key };
                 SetString(TrackedKeysKey, string.Join(",", trackedKeys));
             }
         }
@@ -217,7 +240,7 @@ namespace Nova
 
         public IEnumerable<string> GetAllTrackedKeys()
         {
-            return GetString(TrackedKeysKey).Split(new[] {','}, System.StringSplitOptions.RemoveEmptyEntries);
+            return GetString(TrackedKeysKey).Split(new[] { ',' }, System.StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }

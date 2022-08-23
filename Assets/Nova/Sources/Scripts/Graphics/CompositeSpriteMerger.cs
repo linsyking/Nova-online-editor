@@ -147,7 +147,7 @@ namespace Nova
                 hideFlags = HideFlags.DontSave
             };
             merger = root.Ensure<CompositeSpriteMerger>();
-            merger.runInEditMode = true;
+            // merger.runInEditMode = true;
 
             var camera = new GameObject("Camera");
             camera.transform.SetParent(root.transform);

@@ -89,12 +89,12 @@ namespace Nova
         /// </summary>
         public bool IsTriggered(AbstractKey key)
         {
-#if !UNITY_EDITOR
-            if (ActionAssetData.IsEditorOnly(key))
-            {
-                return false;
-            }
-#endif
+//#if !UNITY_EDITOR
+            //if (ActionAssetData.IsEditorOnly(key))
+            //{
+            //    return false;
+            //}
+//#endif
 
             if (!actionAsset.TryGetAction(key, out var action))
             {
@@ -107,12 +107,12 @@ namespace Nova
 
         public bool IsPressed(AbstractKey key)
         {
-#if !UNITY_EDITOR
-            if (ActionAssetData.IsEditorOnly(key))
-            {
-                return false;
-            }
-#endif
+//#if !UNITY_EDITOR
+//            if (ActionAssetData.IsEditorOnly(key))
+//            {
+//                return false;
+//            }
+//#endif
 
             if (!actionAsset.TryGetAction(key, out var action))
             {

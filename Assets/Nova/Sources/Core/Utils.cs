@@ -314,6 +314,7 @@ namespace Nova
             SaveAll();
             UnityEditor.EditorApplication.isPlaying = false;
 #else
+            //PlayerPrefs.DeleteAll();
             ForceQuit = true;
             Application.Quit();
             // All components write to disk in OnDestroy

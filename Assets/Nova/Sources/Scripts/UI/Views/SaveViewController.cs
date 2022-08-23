@@ -14,6 +14,7 @@ namespace Nova
         Load
     }
 
+	[ExportCustomType]
     public class SaveViewController : ViewControllerBase
     {
         [SerializeField] private GameObject saveEntryPrefab;
@@ -161,6 +162,7 @@ namespace Nova
 
             gameState.nodeChanged.AddListener(OnNodeChanged);
             gameState.dialogueChanged.AddListener(OnDialogueChanged);
+            LuaRuntime.Instance.BindObject("saveViewController", this);
         }
 
         protected override void Start()
@@ -406,6 +408,7 @@ namespace Nova
 
             checkpointManager.SaveBookmark(saveID, bookmark);
             Destroy(texture);
+            Alert.Show("已在此处自动存档");
         }
 
         public void AutoSaveBookmark()
@@ -473,6 +476,7 @@ namespace Nova
 
         private void OnThumbnailButtonClicked(int saveID)
         {
+            Debug.Log("Thumbnail clicked");
             if (Touch.activeTouches.Count == 0) // Mouse
             {
                 if (saveViewMode == SaveViewMode.Save)

@@ -1,0 +1,36 @@
+@<|
+label 'test_image'
+is_unlocked_start()
+|>
+<|
+show(bg, 'wuhui/wuban')
+stop(bgm)
+set_box()
+|>
+测试图片加载
+
+<|
+auto_save()
+show(bg, 'wuhui/mv')
+wxpreload('sd')
+m_release_all()
+|>
+x
+
+<|
+hide(bg)
+anim:loop(function(entry)
+		ins = entry
+		
+		for i = 1,59
+		do
+			ins = ins:trans(f1bg, 'Wuhui/item/image'..(string.format("%03d", i)), 'fade', 0.3
+				)
+		end
+		
+        return ins
+    end)
+set_box('hide')
+|>
+开始展示
+@<| is_end() |>

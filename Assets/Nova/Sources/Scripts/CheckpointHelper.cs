@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace Nova
 {
     using GlobalVariables = Dictionary<string, VariableEntry>;

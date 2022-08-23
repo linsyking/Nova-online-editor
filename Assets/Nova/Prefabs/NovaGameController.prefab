@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 8771533738423406258}
   - component: {fileID: 114014151699594742}
   - component: {fileID: 6935519797362669510}
+  - component: {fileID: 3329401974657276854}
   m_Layer: 0
   m_Name: NovaGameController
   m_TagString: NovaGameController
@@ -268,8 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb0ef2eaa610da4ea5cf74855d85f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultActionAsset: {fileID: -944628639613478452, guid: 1702af3a5691a8b42a8c171528f43c46,
-    type: 3}
+  defaultActionAsset: {fileID: -944628639613478452, guid: 1702af3a5691a8b42a8c171528f43c46, type: 3}
 --- !u!114 &114593149028580010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +357,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configKeyName: OnlyFastForwardRead
+--- !u!114 &3329401974657276854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737081535048956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad96a4aa95cf0784dbcbe72a66705c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963475629363514
 GameObject:
   m_ObjectHideFlags: 0

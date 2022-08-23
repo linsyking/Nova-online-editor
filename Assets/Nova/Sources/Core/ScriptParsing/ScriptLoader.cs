@@ -1,10 +1,12 @@
 using LuaInterface;
 using Nova.Script;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Newtonsoft.Json.Linq;
 
 namespace Nova
 {
@@ -15,6 +17,7 @@ namespace Nova
     public class ScriptLoader
     {
         private bool inited;
+        private GetHTTP httpGetter;
 
         /// <summary>
         /// Initialize the script loader. This method will load all text asset files in the given folder, parse all the
@@ -34,10 +37,15 @@ namespace Nova
                 return;
             }
 
+            var controller = Utils.FindNovaGameController();
+
+            httpGetter = controller.HttpGetter;
+
             ForceInit(path);
 
             inited = true;
         }
+
 
         private readonly FlowChartTree flowChartTree = new FlowChartTree();
 
@@ -74,6 +82,7 @@ namespace Nova
             table.Dispose();
         }
 
+
         public void ForceInit(string path)
         {
             currentNode = null;
@@ -88,28 +97,31 @@ namespace Nova
 
             flowChartTree.Unfreeze();
 
-            foreach (var locale in I18n.SupportedLocales)
+
+#if UNITY_EDITOR
+            string preppath = Path.Combine(Application.streamingAssetsPath, "scripts.json");
+#else
+            var json_path = httpGetter.getScriptJSON();
+            string preppath = Path.Combine(Application.streamingAssetsPath, $"{json_path}/scripts.json");
+
+#endif
+
+
+#if UNITY_EDITOR
+            if (File.Exists(preppath))
             {
-                stateLocale = locale;
-
-                string localizedPath = path;
-                if (locale != I18n.DefaultLocale)
+                string contents = File.ReadAllText(preppath);
+                //var objs = JsonUtility.FromJson<string[]>(contents);
+                JArray rawObjs = JArray.Parse(contents);
+                List<string> objs = rawObjs.ToObject<List<string>>();
+                
+                foreach (var script in objs)
                 {
-                    localizedPath = I18n.LocalizedResourcesPath + locale + "/" + path;
-                }
-
-                var scripts = Resources.LoadAll(localizedPath, typeof(TextAsset)).Cast<TextAsset>();
-                foreach (var script in scripts)
-                {
-                    if (onlyIncludedNames.Count > 0 && !onlyIncludedNames.Contains(script.name))
+                    Debug.Log($"Reading {script}.");
+                    if (onlyIncludedNames.Count > 0 && !onlyIncludedNames.Contains(script))
                     {
                         continue;
                     }
-
-#if UNITY_EDITOR
-                    var scriptPath = AssetDatabase.GetAssetPath(script);
-                    Debug.Log($"Nova: Parse script {scriptPath}");
-#endif
 
                     try
                     {
@@ -117,10 +129,59 @@ namespace Nova
                     }
                     catch (ParseException e)
                     {
-                        throw new ParseException($"Failed to parse {script.name}", e);
+                        throw new ParseException($"Failed to parse {script}", e);
                     }
                 }
+
             }
+            else
+            {
+                return;
+            }
+#else
+            var prep_result = httpGetter.getHTTPFileContentSync(preppath);
+            if (prep_result != "")
+            {
+                string contents = prep_result;
+                //var objs = JsonUtility.FromJson<string[]>(contents);
+                JArray rawObjs = JArray.Parse(contents);
+                List<string> objs = rawObjs.ToObject<List<string>>();
+
+                foreach (var script in objs)
+                {
+                    Debug.Log($"Reading {script}.");
+                    if (onlyIncludedNames.Count > 0 && !onlyIncludedNames.Contains(script))
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        ParseScript($"{json_path}/{script}");
+                    }
+                    catch (ParseException e)
+                    {
+                        throw new ParseException($"Failed to parse {script}", e);
+                    }
+                }
+
+            }
+            else
+            {
+                return;
+            }
+
+#endif
+
+
+
+            //if (locale != I18n.DefaultLocale)
+            //{
+            //    localizedPath = I18n.LocalizedResourcesPath + locale + "/" + path;
+            //}
+
+            //var scripts = Resources.LoadAll(localizedPath, typeof(TextAsset)).Cast<TextAsset>();
+
 
             // Bind all lazy binding entries
             BindAllLazyBindingEntries();
@@ -131,6 +192,7 @@ namespace Nova
             // Construction finished, freeze the tree status
             flowChartTree.Freeze();
         }
+
 
         private void CheckInit()
         {
@@ -198,12 +260,17 @@ namespace Nova
         /// <summary>
         /// Parse the given TextAsset to chunks and add them to currentNode.
         /// </summary>
-        private void ParseScript(TextAsset script)
+        private void ParseScript(string script)
         {
+#if UNITY_EDITOR
+            var scriptText = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, script));
+#else
+            var scriptText = httpGetter.getHTTPFileContentSync(Path.Combine(Application.streamingAssetsPath, script));
+#endif
             hiddenCharacterNames.Clear();
-            LuaRuntime.Instance.GetFunction("action_new_file").Call(script.name);
+            LuaRuntime.Instance.GetFunction("action_new_file").Call(script);
 
-            var blocks = Parser.Parse(script.text).blocks;
+            var blocks = Parser.Parse(scriptText).blocks;
 
             if (blocks.Count == 0)
             {
@@ -277,7 +344,7 @@ namespace Nova
             LuaRuntime.Instance.DoString(eagerExecutionBlockCode);
         }
 
-        #region Methods called by external scripts
+#region Methods called by external scripts
 
         /// <summary>
         /// Create a new flow chart node register it to the current constructing FlowChartTree.
@@ -507,6 +574,6 @@ namespace Nova
             currentNode = null;
         }
 
-        #endregion
+#endregion
     }
 }

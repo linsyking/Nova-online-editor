@@ -18,6 +18,8 @@ namespace Nova
         public NovaAnimation PerDialogueAnimation { get; private set; }
         public NovaAnimation HoldingAnimation { get; private set; }
 
+        public GetHTTP HttpGetter { get; private set; }
+
         private void Awake()
         {
             GameState = FindComponent<GameState>();
@@ -26,6 +28,7 @@ namespace Nova
             ConfigManager = FindComponent<ConfigManager>();
             InputManager = FindComponent<InputManager>();
             CheckpointHelper = FindComponent<CheckpointHelper>();
+            HttpGetter = FindComponent<GetHTTP>();
 
             var animations = GetComponentsInChildren<NovaAnimation>();
             PerDialogueAnimation = Array.Find(animations, x => x.type == AnimationType.PerDialogue);

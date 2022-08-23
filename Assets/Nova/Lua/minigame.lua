@@ -21,6 +21,22 @@ local function check_lazy_not_before(name)
     return true
 end
 
+function uiminigame(prefab_name)
+    if not check_lazy_not_before('minigame') then
+        return
+    end
+
+    input_off()
+    __Nova.coroutineHelper:StartInterrupt()
+
+    show(__Nova.uiPrefabLoader, prefab_name)
+    wait_fence()
+    hide(__Nova.uiPrefabLoader)
+
+    __Nova.coroutineHelper:StopInterrupt()
+    input_on()
+end
+
 function minigame(prefab_loader, prefab_name)
     if not check_lazy_not_before('minigame') then
         return
