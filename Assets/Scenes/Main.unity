@@ -6406,6 +6406,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8791843826535397733, guid: ba2f88a38a7e341dd95278c30faf99d9, type: 3}
+      propertyPath: imageFolder
+      value: Backgrounds
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2f88a38a7e341dd95278c30faf99d9, type: 3}
 --- !u!1 &8904821941984626519 stripped

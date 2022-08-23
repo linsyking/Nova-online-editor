@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -32,6 +32,8 @@ namespace Nova
 
                 transform.localPosition = new Vector3(imageInfo.positionX, imageInfo.positionY, 0f);
                 transform.localScale = new Vector3(imageInfo.scale, imageInfo.scale, 1f);
+
+                GetComponent<AutoSize>().cancelSize();
             }
 
             UpdateText();
