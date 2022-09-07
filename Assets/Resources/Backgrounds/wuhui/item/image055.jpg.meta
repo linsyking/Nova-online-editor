@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ac836f5d80600d418da6b09646bd98c
+guid: 8a7d6cd4c14a6c84e831b99481741791
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,5 +116,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  assetBundleName: wuhui
+  assetBundleVariant: bundle

@@ -1,0 +1,20 @@
+@<|
+label('tut02', '教程2 图像')
+is_start()
+|>
+<|
+stop(bgm)
+set_box()
+|>
+教程2 图像
+
+<|
+show(lanhu, 'normal', {0, -0.3, 0.4})
+|>
+`show`也可以显示角色立绘，`xiben`对应的就是Hierarchy里的`Characters/xiben`
+
+<|
+hide(lanhu)
+|>
+教程2 图像 到此结束
+@<| jump_to 'tut03' |>

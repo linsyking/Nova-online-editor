@@ -20,6 +20,48 @@ MonoBehaviour:
     resourcePath: Backgrounds/wuhui/item/image047
     snapshotOffset: {x: 0, y: 0}
     snapshotScale: {x: 1, y: 1}
+  - id: image059
+    displayNames:
+    - locale: 40
+      value: image059
+    resourcePath: Backgrounds/wuhui/item/image059
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
+  - id: image052
+    displayNames:
+    - locale: 40
+      value: image052
+    resourcePath: Backgrounds/wuhui/item/image052
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
+  - id: image053
+    displayNames:
+    - locale: 40
+      value: image053
+    resourcePath: Backgrounds/wuhui/item/image053
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
+  - id: image058
+    displayNames:
+    - locale: 40
+      value: image058
+    resourcePath: Backgrounds/wuhui/item/image058
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
+  - id: image049
+    displayNames:
+    - locale: 40
+      value: image049
+    resourcePath: Backgrounds/wuhui/item/image049
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
+  - id: image048
+    displayNames:
+    - locale: 40
+      value: image048
+    resourcePath: Backgrounds/wuhui/item/image048
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
   - id: image054
     displayNames:
     - locale: 40
@@ -27,25 +69,18 @@ MonoBehaviour:
     resourcePath: Backgrounds/wuhui/item/image054
     snapshotOffset: {x: 0, y: 0}
     snapshotScale: {x: 1, y: 1}
+  - id: image056
+    displayNames:
+    - locale: 40
+      value: image056
+    resourcePath: Backgrounds/wuhui/item/image056
+    snapshotOffset: {x: 0, y: 0}
+    snapshotScale: {x: 1, y: 1}
   - id: image051
     displayNames:
     - locale: 40
       value: image051
     resourcePath: Backgrounds/wuhui/item/image051
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image057
-    displayNames:
-    - locale: 40
-      value: image057
-    resourcePath: Backgrounds/wuhui/item/image057
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image059
-    displayNames:
-    - locale: 40
-      value: image059
-    resourcePath: Backgrounds/wuhui/item/image059
     snapshotOffset: {x: 0, y: 0}
     snapshotScale: {x: 1, y: 1}
   - id: image055
@@ -62,45 +97,10 @@ MonoBehaviour:
     resourcePath: Backgrounds/wuhui/item/image050
     snapshotOffset: {x: 0, y: 0}
     snapshotScale: {x: 1, y: 1}
-  - id: image052
+  - id: image057
     displayNames:
     - locale: 40
-      value: image052
-    resourcePath: Backgrounds/wuhui/item/image052
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image048
-    displayNames:
-    - locale: 40
-      value: image048
-    resourcePath: Backgrounds/wuhui/item/image048
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image049
-    displayNames:
-    - locale: 40
-      value: image049
-    resourcePath: Backgrounds/wuhui/item/image049
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image058
-    displayNames:
-    - locale: 40
-      value: image058
-    resourcePath: Backgrounds/wuhui/item/image058
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image056
-    displayNames:
-    - locale: 40
-      value: image056
-    resourcePath: Backgrounds/wuhui/item/image056
-    snapshotOffset: {x: 0, y: 0}
-    snapshotScale: {x: 1, y: 1}
-  - id: image053
-    displayNames:
-    - locale: 40
-      value: image053
-    resourcePath: Backgrounds/wuhui/item/image053
+      value: image057
+    resourcePath: Backgrounds/wuhui/item/image057
     snapshotOffset: {x: 0, y: 0}
     snapshotScale: {x: 1, y: 1}

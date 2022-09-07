@@ -9,7 +9,7 @@ from psd_tools import PSDImage
 from psd_tools.api.layers import (Group, PixelLayer, ShapeLayer,
                                   SmartObjectLayer, TypeLayer)
 
-in_filename = 'in.psd'
+in_filename = 'ind2.psd'
 out_dir = 'out'
 out_prefix = ''
 ignored_layer_names = []

@@ -12,6 +12,13 @@ local poses = {
     ['xiben'] = {
         ['normal'] = 'body+mouth_close+eye_normal+eyebrow_normal+hair',
     },
+    ['lanhu'] = {
+        ['normal'] = 'tiger',
+        ['jishu'] = 'tiger+jishu_eye+jishu_tshirt',
+        ['zhuxi'] = 'tiger+zhuxi_cloth',
+        ['sheji'] = 'tiger+sheji_chocker+sheji_ear+sheji_panda',
+        ['wenan'] = 'tiger+wenan_hat+wenan_pen+wenan_penguin'
+    },
 
     ['cg'] = {
         ['rain'] = 'rain_back',
