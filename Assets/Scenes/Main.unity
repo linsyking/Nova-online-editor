@@ -139,6 +139,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &263056832
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 871599197}
+    m_Modifications:
+    - target: {fileID: 1507885517007174357, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: luaName
+      value: ppLanhu3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287245574524170700, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_Name
+      value: Lanhu3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232820536423580251, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680205350502265214, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: secondaryConfigKeyName
+      value: LanhuVoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: imageFolder
+      value: Standings/Lanhu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: voiceFolder
+      value: Voices/Lanhu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: luaGlobalName
+      value: lanhu3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+--- !u!4 &263056833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+  m_PrefabInstance: {fileID: 263056832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291798994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1271,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32769
+    m_Bits: 98305
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2285,6 +2371,8 @@ Transform:
   m_Children:
   - {fileID: 692425615}
   - {fileID: 702255951}
+  - {fileID: 906395371}
+  - {fileID: 263056833}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2312,6 +2400,92 @@ Transform:
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5683051339407815771, guid: 496f273ceaa70f846a7fc9cc4d92372f, type: 3}
   m_PrefabInstance: {fileID: 5683051340147279682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &906395370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 871599197}
+    m_Modifications:
+    - target: {fileID: 1507885517007174357, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: luaName
+      value: ppLanhu2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287245574524170700, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_Name
+      value: Lanhu2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232820536423580251, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680205350502265214, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: secondaryConfigKeyName
+      value: LanhuVoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: imageFolder
+      value: Standings/Lanhu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: voiceFolder
+      value: Voices/Lanhu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318139140313027263, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+      propertyPath: luaGlobalName
+      value: lanhu2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+--- !u!4 &906395371 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6614992942171262117, guid: d69e9accd9e3233469a7960c058dbb16, type: 3}
+  m_PrefabInstance: {fileID: 906395370}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &909243629
 GameObject:
@@ -3948,6 +4122,72 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4003918091626093416, guid: fa21b74de666ce3479067e131ec85ba7, type: 3}
   m_PrefabInstance: {fileID: 4003918090870650449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1497477004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1993674598}
+    m_Modifications:
+    - target: {fileID: 1535484973274616, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_Name
+      value: F2BackgroundImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245542606432642, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+      propertyPath: luaGlobalName
+      value: f2bg
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+--- !u!4 &1497477005 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
+  m_PrefabInstance: {fileID: 1497477004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1542636874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4269582755980200, guid: ed28a84bf5bed423a9613c9aefa4dd7b, type: 3}
@@ -4501,6 +4741,7 @@ Transform:
   - {fileID: 432007167}
   - {fileID: 746514681}
   - {fileID: 423994921}
+  - {fileID: 1497477005}
   - {fileID: 2122363168}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4699,7 +4940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4292405189626576, guid: 3ea442272877e46ae84c2a32213a9128, type: 3}
       propertyPath: m_LocalPosition.x

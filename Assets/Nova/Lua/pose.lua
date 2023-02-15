@@ -1,29 +1,25 @@
 local poses = {
-    ['ergong'] = {
-        ['normal'] = 'body+mouth_smile+eye_normal+eyebrow_normal+hair',
-    },
-    ['gaotian'] = {
-        ['normal'] = 'body+mouth_smile+eye_normal+eyebrow_normal+hair',
-        ['cry'] = 'body+mouth_smile+eye_cry+eyebrow_normal+hair',
-    },
-    ['qianye'] = {
-        ['normal'] = 'body+mouth_close+eye_normal+eyebrow_normal+hair',
-    },
-    ['xiben'] = {
-        ['normal'] = 'body+mouth_close+eye_normal+eyebrow_normal+hair',
-    },
     ['lanhu'] = {
-        ['normal'] = 'tiger',
-        ['jishu'] = 'tiger+jishu_eye+jishu_tshirt',
-        ['zhuxi'] = 'tiger+zhuxi_cloth',
-        ['sheji'] = 'tiger+sheji_chocker+sheji_ear+sheji_panda',
-        ['wenan'] = 'tiger+wenan_hat+wenan_pen+wenan_penguin'
+        ['normal'] = 'body+head+scarf',
+        ['jishu'] = 'body+jishu_eye+jishu_tshirt+scarf+head',
+        ['zhuxi'] = 'body+zhuxi_cloth+scarf+head',
+        ['sheji'] = 'body+sheji_chocker+sheji_panda+scarf+head+sheji_ear',
+        ['wenan'] = 'body+wenan_pen+wenan_penguin+scarf+head+wenan_hat'
     },
-
-    ['cg'] = {
-        ['rain'] = 'rain_back',
-        ['rain_final'] = 'rain_back+rain_text',
+    ['lanhu2'] = {
+        ['normal'] = 'body+head+scarf',
+        ['jishu'] = 'body+jishu_eye+jishu_tshirt+scarf+head',
+        ['zhuxi'] = 'body+zhuxi_cloth+scarf+head',
+        ['sheji'] = 'body+sheji_chocker+sheji_panda+scarf+head+sheji_ear',
+        ['wenan'] = 'body+wenan_pen+wenan_penguin+scarf+head+wenan_hat'
     },
+    ['lanhu3'] = {
+        ['normal'] = 'body+head+scarf',
+        ['jishu'] = 'body+jishu_eye+jishu_tshirt+scarf+head',
+        ['zhuxi'] = 'body+zhuxi_cloth+scarf+head',
+        ['sheji'] = 'body+sheji_chocker+sheji_panda+scarf+head+sheji_ear',
+        ['wenan'] = 'body+wenan_pen+wenan_penguin+scarf+head+wenan_hat'
+    }
 }
 
 function get_pose(obj, pose_name)

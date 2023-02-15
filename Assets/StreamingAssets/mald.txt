@@ -1,0 +1,72 @@
+@<|
+label('fmain', '欢迎来到JISU')
+is_unlocked_start()
+|>
+<|
+set_box()
+anim:trans(bg, 'xiaozhao/longbin', 'fade', 1)
+show(lanhu, 'normal', pos_l)
+|>
+欢迎游玩JISU一日游。
+
+<|
+show(lanhu, 'jishu', pos_c)
+|>
+在游戏中滑动屏幕可以唤出菜单。
+
+<|
+show(lanhu2, 'zhuxi', pos_r)
+|>
+本游戏支持存读档，在你觉得需要存档的地方可以存档哦！
+
+<|
+show(lanhu3, 'sheji', pos_r)
+|>
+那么，请选择你想去的剧本吧！
+
+<|
+show(lanhu, 'wenan', pos_r)
+|>
+那么，请选择你想去的剧本吧！
+@<|
+jump_to('l_p1')
+|>
+
+@<|
+label('l_p1')
+|>
+<|
+set_box('hide')
+fall_through()
+|>
+@<|
+branch {
+    { dest = 'wuhui', image = {'poster/wuhui', {-700, -150, 1}}},
+    { dest = 'jianmianhui', image = {'poster/jianmian', {-200, -150, 1}}},
+    { dest = 'chuanmei', image = {'poster/chuanmei', {300, -150, 1}}},
+    { dest = 'l_p2', image = {'data/next', {730, -300, 2}}}
+}
+|>
+
+@<|
+label('l_p2')
+|>
+@<|
+branch {
+    { dest = 'jisu_start', image = {'poster/jisu', {-700, -150, 1}}},
+    { dest = 'jianmianhui', image = {'poster/jianmian', {-200, -150, 1}}},
+    { dest = 'wuhui', image = {'poster/wuhui', {300, -150, 1}}},
+    { dest = 'l_p3', image = {'data/next', {730, -300, 2}}},
+    { dest = 'l_p1', image = {'data/prev', {730, -100, 2}}}
+}
+|>
+
+@<|
+label('l_p3')
+|>
+@<|
+branch {
+    { dest = 'chuanmei', image = {'poster/chuanmei', {-700, -150, 1}}},
+    { dest = 'l_p2', image = {'data/prev', {730, -100, 2}}}
+}
+|>
